@@ -4,16 +4,16 @@ branding:
   icon: 'git-branch'
   color: 'gray-dark'
 inputs:
-  source_repo:
+  SOURCE_REPO:
     description: GitHub repo slug or full url
     required: true
-  source_branch:
+  SOURCE_BRANCH:
     description: Branch name to sync from
     required: true
-  destination_repo:
+  DESTINATION_REPO:
     description: GitHub repo slug or full url
     required: true
-  destination_branch:
+  DESTINATION_BRANCH:
     description: Branch name to sync to
     required: true
   ssh_private_key:
@@ -33,7 +33,7 @@ runs:
     SOURCE_SSH_PRIVATE_KEY: ${{ inputs.source_ssh_private_key }}
     DESTINATION_SSH_PRIVATE_KEY: ${{ inputs.destination_ssh_private_key }}
   args:
-    - ${{ inputs.source_repo }}
-    - ${{ inputs.source_branch }}
-    - ${{ inputs.destination_repo }}
-    - ${{ inputs.destination_branch }}
+    - ${{ inputs.SOURCE_REPO }}
+    - ${{ inputs.SOURCE_BRANCH }}
+    - ${{ inputs.DESTINATION_REPO }}
+    - ${{ inputs.DESTINATION_BRANCH }}
