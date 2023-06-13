@@ -7,6 +7,9 @@ SOURCE_BRANCH=$2
 DESTINATION_REPO=$3
 DESTINATION_BRANCH=$4
 
+echo "SOURCE_REPO is $SOURCE_REPO"
+echo "DESTINATION_REPO is $DESTINATION_REPO"
+
 if ! echo $SOURCE_REPO | grep -Eq ':|@|\.git\/?$'; then
   if [[ -n "$SSH_PRIVATE_KEY" || -n "$SOURCE_SSH_PRIVATE_KEY" ]]; then
     SOURCE_REPO="git@github.com:${SOURCE_REPO}.git"
