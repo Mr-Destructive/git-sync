@@ -5,6 +5,8 @@ RUN apk add --no-cache git openssh-client && \
 
 ADD *.sh /
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh && \
+    chmod +x /git-sync.sh
+
 
 ENTRYPOINT ["/entrypoint.sh"]
